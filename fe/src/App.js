@@ -1,9 +1,11 @@
-function App() {
+import PhonesHolder from "./Containers/PhonesHolder/PhonesHolder";
+
+const App = () => {
   return (
     <div className="App">
-      <p>Hello</p>
+      <PhonesHolder />
     </div>
   );
-}
+};
 
 export default App;
