@@ -1,17 +1,15 @@
 import { useEffect, useState } from "react";
 
+import Phone from "../../Components/Phone/Phone";
+
 const PhonesHolder = () => {
   const [phoneData, setPhoneData] = useState([]);
-  const [dataError, setErrorData] = useState([]);
 
   useEffect(() => {
     const requestOptions = {
-      method: "GET",
-      mode: "cors",
       headers: {
         "Access-Control-Allow-Origin": "*",
       },
-      redirect: "follow",
     };
 
     fetch("http://localhost:8080/phones", requestOptions)
@@ -20,13 +18,16 @@ const PhonesHolder = () => {
         setPhoneData(data);
       })
       .catch((err) => {
-        setErrorData(err);
+        console.log(err);
       });
   }, []);
 
-  console.log(phoneData);
+  const phonesArray = Object.values(phoneData);
+  const phones = phonesArray.map((phone) => (
+    <Phone key={phone.id} data={phone} />
+  ));
 
-  return <div>hello</div>;
+  return <div>{phones}</div>;
 };
 
 export default PhonesHolder;
