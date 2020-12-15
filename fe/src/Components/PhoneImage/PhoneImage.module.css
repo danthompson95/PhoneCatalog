@@ -5,6 +5,6 @@
 
 .PhoneImage > img {
   width: 300px;
-  height: 325px;
+  height: auto;
   object-fit: fill;
 }
