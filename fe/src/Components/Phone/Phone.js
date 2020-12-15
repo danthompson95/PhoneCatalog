@@ -22,18 +22,17 @@ const Phone = (props) => {
 
   return (
     <div className={Styles.Phone}>
-      <ul>
-        <PhoneImage
-          image={phoneData.image}
-          alt={`${phoneData.brand} ${phoneData.model}`}
-        />
-        <li>{phoneData.brand}</li>
-        <li>{phoneData.model}</li>
-        {phoneDetails ? (
-          <PhoneDetails data={phoneData} closeModal={handleCloseModal} />
-        ) : null}
-        <Button clickEvent={handleButtonClick}>View More</Button>
-      </ul>
+      <PhoneImage
+        image={phoneData.image}
+        alt={`${phoneData.brand} ${phoneData.model}`}
+      />
+      <h3>
+        {phoneData.brand} - {phoneData.model}
+      </h3>
+      {phoneDetails ? (
+        <PhoneDetails data={phoneData} closeModal={handleCloseModal} />
+      ) : null}
+      <Button clickEvent={handleButtonClick}>View More</Button>
     </div>
   );
 };
