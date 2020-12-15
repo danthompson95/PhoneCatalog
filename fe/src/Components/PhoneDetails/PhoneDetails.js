@@ -20,7 +20,7 @@ const PhoneDetails = (props) => {
   ));
 
   return (
-    <div className={Styles.PhoneDetails}>
+    <div className={Styles.PhoneDetails} onClick={() => props.closeModal(true)}>
       <div className={Styles.PhoneDetailsContent}>
         <div className={Styles.PhoneDetailsHeader}>
           <span
