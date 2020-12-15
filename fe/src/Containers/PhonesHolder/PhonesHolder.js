@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 
 import Phone from "../../Components/Phone/Phone";
 
+import Styles from "./PhonesHolder.module.css";
+
 const PhonesHolder = () => {
   const [phoneData, setPhoneData] = useState([]);
 
@@ -27,7 +29,7 @@ const PhonesHolder = () => {
     <Phone key={phone.id} data={phone} />
   ));
 
-  return <div>{phones}</div>;
+  return <div className={Styles.PhonesHolder}>{phones}</div>;
 };
 
 export default PhonesHolder;
