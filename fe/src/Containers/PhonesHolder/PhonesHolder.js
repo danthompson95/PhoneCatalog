@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 
 import Phone from "../../Components/Phone/Phone";
+import Spinner from "../../Components/UI/Spinner/Spinner";
 
 import Styles from "./PhonesHolder.module.css";
 
 const PhonesHolder = () => {
   const [phoneData, setPhoneData] = useState([]);
+  const [dataLoaded, setDataLoaded] = useState(false);
 
   useEffect(() => {
     const requestOptions = {
@@ -18,6 +20,7 @@ const PhonesHolder = () => {
       .then((response) => response.json())
       .then((data) => {
         setPhoneData(data);
+        setDataLoaded(true);
       })
       .catch((err) => {
         console.log(err);
@@ -29,7 +32,9 @@ const PhonesHolder = () => {
     <Phone key={phone.id} data={phone} />
   ));
 
-  return <div className={Styles.PhonesHolder}>{phones}</div>;
+  const loaded = dataLoaded ? phones : <Spinner />;
+
+  return <div className={Styles.PhonesHolder}>{loaded}</div>;
 };
 
 export default PhonesHolder;
