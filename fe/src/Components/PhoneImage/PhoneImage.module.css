@@ -1,0 +1,10 @@
+.PhoneImage {
+  width: 100%;
+  height: auto;
+}
+
+.PhoneImage > img {
+  width: 300px;
+  height: 325px;
+  object-fit: fill;
+}
