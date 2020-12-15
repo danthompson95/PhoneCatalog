@@ -32,22 +32,47 @@ const PhoneDetails = (props) => {
           <h2>{`${props.data.brand} ${props.data.model}`}</h2>
         </div>
         <div className={Styles.PhoneDetailsBody}>
-          <p>Weight: {props.data.weight}g</p>
-          <p>Release Year: {props.data.releaseYear}</p>
-          <p>Display: {props.data.display}</p>
-          <p>Screen Size: {props.data.screenSize}</p>
-          <p>Front Camera:</p>
-          <ul>{frontCameraList}</ul>
-          <p>Rear Camera:</p>
-          <ul>{rearCameraList}</ul>
-          <p>MP3 Jack: {props.data.jack}</p>
-          <p>Expandable Memory: {props.data.memory.expandable}</p>
-          <p>Internal Memory:</p>
-          <ul>{internalMemoryList}</ul>
-          <p>Colors:</p>
-          <ul>{colorsList}</ul>
+          <div className={Styles.PhoneDetailsHolder}>
+            <h4 className={Styles.PhoneDetailsCategory}>Weight</h4>
+            <p>{props.data.weight}g</p>
+          </div>
+          <div className={Styles.PhoneDetailsHolder}>
+            <h4 className={Styles.PhoneDetailsCategory}>Release Year</h4>
+            <p>{props.data.releaseYear}</p>
+          </div>
+          <div className={Styles.PhoneDetailsHolder}>
+            <h4 className={Styles.PhoneDetailsCategory}>Display</h4>
+            <p>{props.data.display}</p>
+          </div>
+          <div className={Styles.PhoneDetailsHolder}>
+            <h4 className={Styles.PhoneDetailsCategory}>Screen Size</h4>
+            <p>{props.data.screenSize}inches</p>
+          </div>
+          <div className={Styles.PhoneDetailsHolder}>
+            <h4 className={Styles.PhoneDetailsCategory}>Front Camera</h4>
+            <ul className={Styles.PhoneDetailsList}>{frontCameraList}</ul>
+          </div>
+          <div className={Styles.PhoneDetailsHolder}>
+            <h4 className={Styles.PhoneDetailsCategory}>Rear Camera</h4>
+            <ul className={Styles.PhoneDetailsList}>{rearCameraList}</ul>
+          </div>
+          <div className={Styles.PhoneDetailsHolder}>
+            <h4 className={Styles.PhoneDetailsCategory}>MP3 Jack</h4>
+            <p>{props.data.jack ? "true" : "false"}</p>
+          </div>
+          <div className={Styles.PhoneDetailsHolder}>
+            <h4 className={Styles.PhoneDetailsCategory}>Expandable Memory</h4>
+            <p>{props.data.memory.expandable ? "true" : "false"}</p>
+          </div>
+          <div className={Styles.PhoneDetailsHolder}>
+            <h4 className={Styles.PhoneDetailsCategory}>Internal Memory</h4>
+            <ul className={Styles.PhoneDetailsList}>{internalMemoryList}</ul>
+          </div>
+          <div className={Styles.PhoneDetailsHolder}>
+            <h4 className={Styles.PhoneDetailsCategory}>Colors</h4>
+            <ul className={Styles.PhoneDetailsList}>{colorsList}</ul>
+          </div>
         </div>
-        <div className={Styles.PhoneDetailsFooter}></div>
       </div>
     </div>
   );

@@ -3,7 +3,7 @@
   z-index: 100;
   left: 0;
   top: 0;
-  padding-top: 100px;
+  padding-top: 10px;
   width: 100%;
   height: 100%;
   overflow: auto;
@@ -17,16 +17,19 @@
   margin: auto;
   padding: 0;
   border: 1px solid #888;
-  width: 80%;
+  width: 90%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   animation-name: animatetop;
   animation-duration: 0.4s;
+  text-align: left;
 }
 
 .PhoneDetailsHeader {
   padding: 2px 16px;
   background-color: #fff;
   color: #000;
+  border-bottom: 1px solid #000;
+  text-align: center;
 }
 
 .PhoneDetailsClose {
@@ -47,10 +50,32 @@
   padding: 2px 16px;
 }
 
-.PhoneDetailsFooter {
-  padding: 2px 16px;
-  background-color: #fff;
-  color: #000;
+.PhoneDetailsList {
+  list-style-type: none;
+  padding-inline-start: 5px;
+  margin: 0;
+  padding: 0;
+}
+
+.PhoneDetailsList > li:before {
+  content: "- ";
+}
+
+.PhoneDetailsCategory {
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  width: 50%;
+}
+
+.PhoneDetailsHolder {
+  display: flex;
+  margin: 20px 10px;
+}
+
+.PhoneDetailsHolder > p {
+  margin: 0;
+  padding: 0;
 }
 
 @keyframes animatetop {
@@ -61,5 +86,23 @@
   to {
     top: 0;
     opacity: 1;
+  }
+}
+
+@media (min-width: 500px) {
+  .PhoneDetails {
+    padding-top: 100px;
+  }
+
+  .PhoneDetailsContent {
+    width: 50%;
+  }
+
+  .PhoneDetailsHolder {
+    margin: 20px;
+  }
+
+  .PhoneDetailsCategory {
+    width: 30%;
   }
 }
