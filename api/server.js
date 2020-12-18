@@ -24,7 +24,7 @@ app.get("/", (req, res) => {
   res.send("API Online");
 });
 
-app.get("/getPhones", (req, res) => {
+app.get("/phones", (req, res) => {
   const getPhonesRef = db.ref("/phones");
 
   getPhonesRef.once(
