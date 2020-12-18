@@ -50,6 +50,11 @@
   padding: 2px 16px;
 }
 
+.PhoneDetailsFooter {
+  padding: 2px 16px;
+  color: black;
+}
+
 .PhoneDetailsList {
   list-style-type: none;
   padding-inline-start: 5px;
