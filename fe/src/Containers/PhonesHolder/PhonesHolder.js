@@ -17,7 +17,7 @@ const PhonesHolder = () => {
     };
 
     fetch(
-      "https://danthompsonphonecatalog.ew.r.appspot.com/getPhones",
+      "https://danthompsonphonecatalog.ew.r.appspot.com/phones",
       requestOptions
     )
       .then((response) => response.json())
