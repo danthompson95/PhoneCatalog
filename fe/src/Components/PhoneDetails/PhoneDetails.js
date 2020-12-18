@@ -2,6 +2,8 @@ import Styles from "./PhoneDetails.module.css";
 
 //import Button from "../UI/Button/Button";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 const PhoneDetails = (props) => {
   const colors = props.data.colors;
   const colorsList = colors.map((color) => <li key={color}>{color}</li>);
@@ -97,11 +99,23 @@ const PhoneDetails = (props) => {
           </div>
           <div className={Styles.PhoneDetailsHolder}>
             <h4 className={Styles.PhoneDetailsCategory}>MP3 Jack</h4>
-            <p>{props.data.jack ? "true" : "false"}</p>
+            <p>
+              {props.data.jack ? (
+                <FontAwesomeIcon icon="check-circle" />
+              ) : (
+                <FontAwesomeIcon icon="times-circle" />
+              )}
+            </p>
           </div>
           <div className={Styles.PhoneDetailsHolder}>
             <h4 className={Styles.PhoneDetailsCategory}>Expandable Memory</h4>
-            <p>{props.data.memory.expandable ? "true" : "false"}</p>
+            <p>
+              {props.data.memory.expandable ? (
+                <FontAwesomeIcon icon="check-circle" />
+              ) : (
+                <FontAwesomeIcon icon="times-circle" />
+              )}
+            </p>
           </div>
           <div className={Styles.PhoneDetailsHolder}>
             <h4 className={Styles.PhoneDetailsCategory}>Internal Memory</h4>
