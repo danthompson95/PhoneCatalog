@@ -16,7 +16,10 @@ const PhonesHolder = () => {
       },
     };
 
-    fetch("http://localhost:8080/phones", requestOptions)
+    fetch(
+      "https://danthompsonphonecatalog.ew.r.appspot.com/getPhones",
+      requestOptions
+    )
       .then((response) => response.json())
       .then((data) => {
         setPhoneData(data);
